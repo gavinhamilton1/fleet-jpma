@@ -1,0 +1,19 @@
+apiVersion: ingress.jpmc.com/v1alpha1
+kind: Fleet
+metadata:
+  name: fleet-access
+  namespace: ingress-system
+  labels:
+    app.kubernetes.io/managed-by: management-api
+spec:
+  gatewayType: envoy
+  replicas: 1
+  nodes:
+    - name: "fleet-access-envoy-1"
+      index: 1
+      datacenter: "us-east-2"
+      region: "us-east-2"
+      status: "running"
+status:
+  phase: Pending
+  observedGeneration: 0
