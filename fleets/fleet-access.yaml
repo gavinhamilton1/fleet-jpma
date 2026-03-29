@@ -6,6 +6,8 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: management-api
 spec:
+  name: "JPMA"
+  subdomain: "access.jpm.com"
   gatewayType: envoy
   replicas: 1
   nodes:
@@ -14,6 +16,3 @@ spec:
       datacenter: "us-east-2"
       region: "us-east-2"
       status: "running"
-status:
-  phase: Pending
-  observedGeneration: 0
