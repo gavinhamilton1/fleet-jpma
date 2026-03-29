@@ -2,7 +2,7 @@ apiVersion: ingress.jpmc.com/v1alpha1
 kind: Fleet
 metadata:
   name: fleet-access
-  namespace: ingress-system
+  namespace: ingress-dp
   labels:
     app.kubernetes.io/managed-by: management-api
 spec:
