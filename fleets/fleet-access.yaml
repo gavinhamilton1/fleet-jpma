@@ -13,6 +13,7 @@ spec:
   nodes:
     - name: "fleet-access-envoy-1"
       index: 1
+      gatewayType: "envoy"
       datacenter: "us-east-2"
       region: "us-east-2"
       status: "running"
