@@ -1,0 +1,29 @@
+apiVersion: ingress.jpmc.com/v1alpha1
+kind: Route
+metadata:
+  name: b2bde801-269b-4b7d-8b58-031051f9558e
+  namespace: ingress-dp
+  labels:
+    app.kubernetes.io/managed-by: management-api
+    ingress.jpmc.com/gateway: envoy
+spec:
+  path: "/"
+  hostname: "access.jpm.com"
+  backendUrl: "http://svc-access-login:80"
+  gatewayType: envoy
+  audience: "access"
+  team: "payments"
+  authnMechanism: "bearer"
+  authIssuer: "AuthE1.0"
+  tlsRequired: true
+  targetFleet: "access.jpm.com"
+  methods:
+    - GET
+    - POST
+  authzScopes:
+    - payments:read
+    - access:view
+  healthPath: "/health"
+  notes: "J.P. Morgan Access login POC page"
+status:
+  phase: Pending
